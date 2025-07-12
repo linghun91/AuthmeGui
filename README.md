@@ -33,9 +33,12 @@ src/
     │               │   ├── AuthMeManager.java             # AuthMe管理器抽象类
     │               │   ├── ConfigManager.java             # 配置管理器抽象类
     │               │   ├── GUIManager.java                # GUI管理器抽象类
+    │               │   ├── LoginPluginManager.java        # 登录插件管理器
     │               │   ├── MessageManager.java            # 消息管理器抽象类
     │               │   └── impl/
+    │               │       ├── AuthMeLoginAdapter.java    # AuthMe登录适配器
     │               │       ├── AuthMeManagerImpl.java     # AuthMe管理器实现
+    │               │       ├── CatSeedLoginAdapter.java   # CatSeedLogin适配器
     │               │       ├── ConfigManagerImpl.java     # 配置管理器实现
     │               │       ├── GUIManagerImpl.java        # GUI管理器实现
     │               │       └── MessageManagerImpl.java    # 消息管理器实现
@@ -51,10 +54,17 @@ src/
             └── register.yml    # 注册界面配置
 ```
 
+### 架构设计特点
+
+#### 🏗️ 抽象类模块化架构
+- **Manager层**：统一管理不同功能模块（AuthMe、配置、GUI、消息）
+- **GUI层**：AnvilGUI抽象基类统一处理铁砧界面交互逻辑
+- **Listener层**：分离不同类型的事件监听（玩家、背包、AuthMe、PacketEvents）
+- **Util层**：提供通用工具类支持
+
 #### 🛡️ 安全设计
 - 密码输入支持掩码显示(*号)，防止密码泄露
 - 白名单机制防止GUI重复打开和事件冲突
-- 完善的异常处理，确保插件稳定运行
 
 ## 🌟 主要特性
 
@@ -66,7 +76,7 @@ src/
 - **PacketEvents支持**：使用PacketEvents实现精确的铁砧输入监听
 
 ### 🔐 安全可靠
-- **AuthMe集成**：完全兼容AuthMe插件，使用其安全的密码验证系统
+- **多插件支持**：完全兼容AuthMe和CatSeedLogin插件，使用其安全的密码验证系统
 - **密码验证**：支持密码长度限制和复杂度检查
 - **会话管理**：自动处理玩家登录状态，防止重复操作
 - **输入安全**：密码输入过程中实时掩码处理，防止密码泄露
@@ -76,25 +86,28 @@ src/
 - **消息自定义**：所有提示消息都可以在message.yml中修改，支持颜色代码和占位符
 - **行为配置**：可调整自动弹出、延迟时间、密码显示模式等行为设置
 - **动作配置**：支持自定义登录/注册成功后的执行动作
-- 
+
 ## 📋 安装要求
 
 ### 必需插件
 - **Minecraft服务端**：Paper/Spigot/Bukkit 1.20+ 或更高版本
-- **AuthMe插件**：必须先安装AuthMe插件作为依赖
+- **登录插件**：安装以下任一登录插件作为依赖
+  - **AuthMe插件**：传统权威的登录注册插件
+  - **CatSeedLogin插件**：轻量级邮箱验证登录插件
 - **PacketEvents插件**：必须安装PacketEvents 2.9.1或更高版本
 
 ### 兼容性
 - 支持Minecraft 1.20+（api-version: 1.20）
 - 兼容Paper、Spigot、Bukkit等主流服务端
+- **双登录插件支持**：同时兼容AuthMe和CatSeedLogin，自动检测并适配
 - 与其他插件兼容性良好
 
 ## 🚀 安装步骤
 
 1. **安装依赖插件**
-   - 下载并安装AuthMe插件到服务器
+   - 下载并安装登录插件（AuthMe或CatSeedLogin任选其一）
    - 下载并安装PacketEvents插件到服务器
-   - 确保两个依赖插件都正常运行
+   - 确保依赖插件都正常运行
 
 2. **安装AuthmeGui插件**
    - 将AuthmeGui.jar文件放入服务器的plugins文件夹
@@ -248,7 +261,7 @@ items:
 
 ### Q: 玩家进入服务器后没有弹出GUI界面？
 A: 请检查：
-- AuthMe插件是否正常运行
+- 登录插件（AuthMe或CatSeedLogin）是否正常运行
 - PacketEvents插件是否正常运行且版本兼容
 - config.yml中gui.enabled和gui.auto-open是否为true
 - 玩家是否已经登录（GUI只对未认证玩家显示）
@@ -283,8 +296,8 @@ A: 这可能是事件冲突导致的：
 ### Q: 玩家输入密码后没有反应？
 A: 请检查：
 - 密码是否符合长度和复杂度要求
-- AuthMe插件是否正常工作
-- 控制台是否有AuthMe相关错误
+- 登录插件（AuthMe或CatSeedLogin）是否正常工作
+- 控制台是否有登录插件相关错误
 - 尝试使用/authgui info查看插件状态
 
 ## 📞 支持与反馈
