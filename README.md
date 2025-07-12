@@ -12,36 +12,36 @@ src/
     │   └── cn/
     │       └── i7mc/
     │           └── authmeGui/
-    │               ├── AuthmeGui.java              # 主插件类
+    │               ├── AuthmeGui.java                     # 主插件类
     │               ├── command/
-    │               │   └── AuthGuiCommand.java     # 命令处理器
+    │               │   └── AuthGuiCommand.java            # 命令处理器
     │               ├── config/
-    │               │   ├── MenuConfig.java         # 菜单配置数据类
-    │               │   ├── MenuConfigParser.java   # 菜单配置解析器抽象类
+    │               │   ├── MenuConfig.java                # 菜单配置数据类
+    │               │   ├── MenuConfigParser.java          # 菜单配置解析器抽象类
     │               │   └── impl/
     │               │       └── MenuConfigParserImpl.java  # 菜单配置解析器实现
     │               ├── gui/
-    │               │   ├── AnvilGUI.java          # 铁砧GUI抽象基类
-    │               │   ├── LoginGUI.java          # 登录界面实现
-    │               │   └── RegisterGUI.java       # 注册界面实现
+    │               │   ├── AnvilGUI.java                  # 铁砧GUI抽象基类
+    │               │   ├── LoginGUI.java                  # 登录界面实现
+    │               │   └── RegisterGUI.java               # 注册界面实现
     │               ├── listener/
-    │               │   ├── AnvilInputListener.java      # 铁砧输入监听器(PacketEvents)
-    │               │   ├── AuthMeEventListener.java     # AuthMe事件监听器
-    │               │   ├── InventoryEventListener.java  # 背包事件监听器
-    │               │   └── PlayerEventListener.java     # 玩家事件监听器
+    │               │   ├── AnvilInputListener.java        # 铁砧输入监听器(PacketEvents)
+    │               │   ├── AuthMeEventListener.java       # AuthMe事件监听器
+    │               │   ├── InventoryEventListener.java    # 背包事件监听器
+    │               │   └── PlayerEventListener.java       # 玩家事件监听器
     │               ├── manager/
-    │               │   ├── AuthMeManager.java      # AuthMe管理器抽象类
-    │               │   ├── ConfigManager.java      # 配置管理器抽象类
-    │               │   ├── GUIManager.java         # GUI管理器抽象类
-    │               │   ├── MessageManager.java     # 消息管理器抽象类
+    │               │   ├── AuthMeManager.java             # AuthMe管理器抽象类
+    │               │   ├── ConfigManager.java             # 配置管理器抽象类
+    │               │   ├── GUIManager.java                # GUI管理器抽象类
+    │               │   ├── MessageManager.java            # 消息管理器抽象类
     │               │   └── impl/
-    │               │       ├── AuthMeManagerImpl.java    # AuthMe管理器实现
-    │               │       ├── ConfigManagerImpl.java   # 配置管理器实现
-    │               │       ├── GUIManagerImpl.java      # GUI管理器实现
-    │               │       └── MessageManagerImpl.java  # 消息管理器实现
+    │               │       ├── AuthMeManagerImpl.java     # AuthMe管理器实现
+    │               │       ├── ConfigManagerImpl.java     # 配置管理器实现
+    │               │       ├── GUIManagerImpl.java        # GUI管理器实现
+    │               │       └── MessageManagerImpl.java    # 消息管理器实现
     │               └── util/
-    │                   ├── AnvilInputUtil.java     # 铁砧输入处理工具
-    │                   └── GuiOpenHelper.java      # GUI打开辅助工具
+    │                   ├── AnvilInputUtil.java            # 铁砧输入处理工具
+    │                   └── GuiOpenHelper.java             # GUI打开辅助工具
     └── resources/
         ├── config.yml          # 主配置文件
         ├── message.yml         # 消息配置文件
