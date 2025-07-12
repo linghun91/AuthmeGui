@@ -34,6 +34,7 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT")
     compileOnly("fr.xephi:authme:5.7.0-SNAPSHOT")
     compileOnly("com.github.retrooper:packetevents-spigot:2.9.1")
+    compileOnly files('libs/CatSeedLogin-1.4.1-SNAPSHOT.jar')
 }
 
 tasks {
