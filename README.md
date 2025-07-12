@@ -23,7 +23,7 @@
 ## 📋 安装要求
 
 ### 必需插件
-- **Minecraft服务端**：Paper 1.20.1 或更高版本
+- **Minecraft服务端**：Bukkit 1.20.1 或更高版本
 - **AuthMe插件**：必须先安装AuthMe插件作为依赖
 - **PacketEvents插件**：必须安装PacketEvents 2.9.1或更高版本
 
@@ -135,24 +135,3 @@ A: 修改config.yml中security部分的配置项
 ### Q: 提示缺少PacketEvents依赖怎么办？
 A: 请确保已安装PacketEvents插件：
 - 下载PacketEvents 2.9.1或更高版本
-- 将其放入plugins文件夹并重启服务器
-- 确保PacketEvents在AuthmeGui之前加载
-
-### Q: 插件与其他插件冲突怎么办？
-A: 本插件设计时考虑了兼容性，如遇问题请联系作者
-
-## 📞 支持与反馈
-
-- **作者**：i7mc
-- **网站**：https://github.com/i7mc
-- **版本**：1.0-SNAPSHOT
-
-如果您在使用过程中遇到问题或有改进建议，欢迎通过GitHub提交Issue。
-
-## 📄 许可证
-
-本插件遵循开源许可证，详情请查看项目仓库。
-
----
-
-*感谢使用AuthmeGui插件！希望它能为您的服务器带来更好的用户体验。*
