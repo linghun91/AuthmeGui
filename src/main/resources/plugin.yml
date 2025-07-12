@@ -4,8 +4,8 @@ main: cn.i7mc.authmeGui.AuthmeGui
 api-version: '1.20'
 depend: [AuthMe]
 description: 基于AuthMe的铁砧GUI登录系统
-author: i7mc
-website: https://github.com/i7mc
+author: Saga
+website: https://github.com/linghun91/AuthmeGui
 
 commands:
   authgui:
