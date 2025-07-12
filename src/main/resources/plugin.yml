@@ -1,0 +1,20 @@
+name: AuthmeGui
+version: '1.0-SNAPSHOT'
+main: cn.i7mc.authmeGui.AuthmeGui
+api-version: '1.20'
+depend: [AuthMe]
+description: 基于AuthMe的铁砧GUI登录系统
+author: i7mc
+website: https://github.com/i7mc
+
+commands:
+  authgui:
+    description: AuthmeGui主命令
+    usage: /authgui [reload]
+    permission: authgui.admin
+    permission-message: 您没有权限使用此命令
+
+permissions:
+  authgui.admin:
+    description: 管理员权限
+    default: op
