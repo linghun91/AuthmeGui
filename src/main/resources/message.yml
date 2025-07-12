@@ -1,0 +1,72 @@
+# AuthmeGui 消息配置文件
+# 支持颜色代码 &a &b &c 等
+# 支持占位符 {player} {password} 等
+
+# 系统消息
+system:
+  plugin-enabled: "&a[AuthmeGui] 插件已启用！"
+  plugin-disabled: "&c[AuthmeGui] 插件已禁用！"
+  config-reloaded: "&a[AuthmeGui] 配置文件已重载！"
+  no-permission: "&c您没有权限执行此操作！"
+
+# GUI相关消息
+gui:
+  # 铁砧GUI标题
+  login-title: "&b登录系统"
+  register-title: "&b注册系统"
+  
+  # 按钮名称和描述
+  cancel-login: "&c&l取消登录"
+  cancel-register: "&c&l取消注册"
+  reset-input: "&e&l重置填写"
+  confirm-login: "&a&l确认登录"
+  confirm-register: "&a&l确认注册"
+  
+  # 输入提示
+  password-placeholder: "请输入密码..."
+  password-confirm-placeholder: "请确认密码..."
+  
+  # 操作结果消息
+  login-success: "&a登录成功！欢迎回来，{player}！"
+  register-success: "&a注册成功！欢迎加入服务器，{player}！"
+  login-failed: "&c登录失败！密码错误，请重试。"
+  register-failed: "&c注册失败！请检查密码格式。"
+  password-too-short: "&c密码太短！最少需要 {min} 个字符。"
+  password-too-long: "&c密码太长！最多允许 {max} 个字符。"
+  password-mismatch: "&c两次输入的密码不一致！"
+  already-logged-in: "&e您已经登录了！"
+  already-registered: "&e您已经注册了！"
+
+  # 身份验证要求消息
+  login-required: "&e请通过GUI界面输入密码登录！"
+  register-required: "&e请通过GUI界面设置密码注册！"
+  
+  # 取消操作消息
+  login-cancelled: "&c登录已取消。"
+  register-cancelled: "&c注册已取消。"
+  kicked-for-cancel: "&c您取消了登录/注册操作。"
+
+  # 输入重置消息
+  input-reset: "&e输入已重置，请重新输入密码。"
+
+# AuthMe集成消息
+authme:
+  not-found: "&c未找到AuthMe插件！请确保已安装AuthMe。"
+  api-error: "&c与AuthMe通信时发生错误！"
+  session-timeout: "&c会话超时，请重新登录。"
+
+# 错误消息
+error:
+  gui-creation-failed: "&c创建GUI时发生错误！"
+  config-load-failed: "&c加载配置文件失败！"
+  unknown-error: "&c发生未知错误！请联系管理员。"
+
+# 命令消息
+command:
+  usage: "&e用法: /authgui [reload|open|close|info]"
+  reload-success: "&a配置文件重载成功！"
+  reload-failed: "&c配置文件重载失败！"
+  only-player: "&c此命令只能由玩家执行！"
+  gui-opened: "&a已为玩家 {player} 打开 {type} GUI！"
+  gui-closed: "&a已关闭玩家 {player} 的GUI！"
+  player-not-found: "&c找不到玩家: {player}"
